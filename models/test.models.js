@@ -18,6 +18,12 @@ const schema = mongoose.Schema;
 
 const testSchema = new schema(
   {
+    workspaceId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Workspace',
+      required: true,
+      trim: true,
+    },
     title: {
       type: String,
       required: true,
@@ -37,7 +43,7 @@ const testSchema = new schema(
       trim: true,
     },
     negativeMarking: {
-      type: number, // validate the datatype
+      type: Number, // validate the datatype
       default: 0,
     },
     status: {

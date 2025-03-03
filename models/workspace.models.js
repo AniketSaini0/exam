@@ -13,22 +13,24 @@ const schema = mongoose.Schema;
 
 const workspaceSchema = new schema(
   {
-    testId: [
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+      unique: true,
+      default: 'Untitled',
+    },
+    testIds: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Test',
-        required: true,
+        required: false,
       },
     ],
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true,
-    },
-    testTitle: {
-      type: String,
-      required: true,
-      trim: true,
     },
   },
   { timestamps: true },

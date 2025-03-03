@@ -52,6 +52,9 @@ app.use('/api/v1/healthcheck', require('./routes/healthcheck.routes.js'));
 
 // Routes
 app.use('/api/v1/users', require('./routes/user.routes.js'));
+app.use('/api/v1/dashboard', require('./routes/dashboard.routes.js'));
+app.use('/api/v1/workspaces', require('./routes/workspace.routes.js'));
+app.use('/api/v1/create-test', require('./routes/test.routes.js'));
 
 //This is a custom middlewere to send the response in Json format from server side
 // app.use(errorHandler);
